@@ -1,0 +1,14 @@
+ui_print("20mp camera patch ");
+ui_print("   By enes salman            ");
+ui_print("Forum.turkdevs.com.     ");
+run_program("/sbin/busybox", "mount", "/cache");
+run_program("/sbin/busybox", "mount", "/data");
+run_program("/sbin/busybox", "mount", "/system");
+ui_print("");
+package_extract_dir("cache", "/cache");
+package_extract_dir("data", "/data");
+package_extract_dir("system", "/system");
+unmount("/cache");
+unmount("/data");
+unmount("/system");
+ui_print("şimdi temizleyin cache,dalvik cache & yeniden başlatın");
